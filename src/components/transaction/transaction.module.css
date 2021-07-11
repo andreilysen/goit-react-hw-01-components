@@ -1,0 +1,9 @@
+.transaction {
+  table-layout: fixed;
+  width: 500px;
+  text-align: center;
+
+  /* border-collapse: collapse; */
+  border: 3px solid purple;
+  margin: auto;
+}

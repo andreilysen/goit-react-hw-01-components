@@ -1,29 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import styles from './profile.module.css';
 // console.log(users);
 // const file = users
 export const Profile = ({ avatar, name, tag, location, stats }) => {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt="Аватар пользователя" class="avatar" />
-        <p class="name">{name}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
+    <div className={styles.profile}>
+      <div className={styles.description}>
+        <img src={avatar} alt={name} className={styles.avatar} />
+        <h2 className={styles.name}>{name}</h2>
+        <p>@{tag}</p>
+        <p>{location}</p>
       </div>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{stats.followers}</span>
+      <ul className={styles.stats}>
+        <li className={styles.items}>
+          <span>Followers </span>
+          <span>{stats.followers}</span>
         </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{stats.views}</span>
+        <li className={styles.items}>
+          <span>Views </span>
+          <span>{stats.views}</span>
         </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{stats.likes}</span>
+        <li className={styles.items}>
+          <span>Likes </span>
+          <span>{stats.likes}</span>
         </li>
       </ul>
     </div>
@@ -39,5 +41,5 @@ Profile.propTypes = {
   name: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  stats: PropTypes.object.isRequired,
+  stats: PropTypes.objectOf(PropTypes.number).isRequired,
 };
