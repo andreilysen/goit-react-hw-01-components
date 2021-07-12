@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import { FriendListItem } from './friendListItem';
 
@@ -9,22 +9,18 @@ export const FriendList = ({ friends }) => {
   //   console.log(friends);
   return (
     <ul className={styles.friendList}>
-      {friends.map(({ avatar, name, isOnline, id }) => (
-        <li className={styles.item} key={id}>
-          <FriendListItem avatar={avatar} name={name} isOnline={isOnline} />
-        </li>
-      ))}
+      <FriendListItem friends={friends} />
     </ul>
   );
 };
 
-FriendList.propTypes = {
-  friends: PropTypes.arrayOf(
-    PropTypes.shape({
-      avatar: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      isOnline: PropTypes.bool.isRequired,
-      id: PropTypes.number.isRequired,
-    }).isRequired,
-  ).isRequired,
-};
+// FriendList.propTypes = {
+//   friends: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       avatar: PropTypes.string.isRequired,
+//       name: PropTypes.string.isRequired,
+//       isOnline: PropTypes.bool.isRequired,
+//       id: PropTypes.number.isRequired,
+//     }).isRequired,
+//   ).isRequired,
+// };

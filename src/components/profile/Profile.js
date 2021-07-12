@@ -4,7 +4,13 @@ import PropTypes from 'prop-types';
 import styles from './profile.module.css';
 // console.log(users);
 // const file = users
-export const Profile = ({ avatar, name, tag, location, stats }) => {
+export const Profile = ({
+  avatar,
+  name,
+  tag,
+  location,
+  stats: { followers, views, likes },
+}) => {
   return (
     <div className={styles.profile}>
       <div className={styles.description}>
@@ -17,15 +23,15 @@ export const Profile = ({ avatar, name, tag, location, stats }) => {
       <ul className={styles.stats}>
         <li className={styles.items}>
           <span>Followers </span>
-          <span>{stats.followers}</span>
+          <span>{followers}</span>
         </li>
         <li className={styles.items}>
           <span>Views </span>
-          <span>{stats.views}</span>
+          <span>{views}</span>
         </li>
         <li className={styles.items}>
           <span>Likes </span>
-          <span>{stats.likes}</span>
+          <span>{likes}</span>
         </li>
       </ul>
     </div>
