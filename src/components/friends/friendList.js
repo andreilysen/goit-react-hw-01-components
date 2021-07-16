@@ -6,10 +6,12 @@ import { FriendListItem } from './friendListItem';
 import styles from './friend.module.css';
 
 export const FriendList = ({ friends }) => {
-  //   console.log(friends);
+  // console.log(friends);
   return (
     <ul className={styles.friendList}>
-      <FriendListItem friends={friends} />
+      {friends.map(friend => {
+        return <FriendListItem key={friend.id} friend={friend} />;
+      })}
     </ul>
   );
 };
